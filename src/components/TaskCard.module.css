@@ -1,0 +1,53 @@
+.card {
+    width: 250px;
+    padding: 10px ;
+    border: none;
+    box-shadow: 1px 1px 6px #686767;
+    border-radius: 4px;
+    background-color: #fdfafa;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    & input {
+        border: 1px solid #666;
+    }
+
+    & button {
+        border-radius: 8px;
+        width: 70px;
+        height: 30px;
+        cursor: pointer;
+        border: 1px solid #222;
+        border-radius: 4px;
+        background-color: #042b58;
+        color: #fff;
+    }
+}
+.edit {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    & input {
+        width: 80%;
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid #666;
+        border-radius: 4px;
+    }
+    & button {
+        width: 100px;
+        margin: 0 auto;
+        height: 30px;
+        border: 1px solid #333;
+        border-radius: 4px;
+        background-color: #021122;
+        color: #fff;
+        cursor: pointer;
+    }
+
+}
