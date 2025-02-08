@@ -5,5 +5,6 @@ export const types = {
     FROM_INPUT: 'FROM_INPUT',
     ADD_TASK: 'ADD_TASK',
     DELETE_TASK: 'DELETE_TASK',
-    EDIT_TASK: 'EDIT_TASK'
+    EDIT_TASK: 'EDIT_TASK',
+    COMPLETED_TASK: 'COMPLETED_TASK'
 }

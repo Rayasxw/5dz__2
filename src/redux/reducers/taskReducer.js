@@ -17,7 +17,37 @@ export default function taskReducer(state = initialState, action) {
                 completed: false
             }]
         }
-    }
+    }else if (action.type === types.EDIT_TASK){
+        const { title, description, index } = action.payload
+        const newTasks = state.tasks.map((task, idx) => {
+            if (idx === index) {
+                return {
+                    ...task,
+                    title,
+                    description
+                }
+            }
+            return task
+        })
+        return {
+            ...state,
+            tasks: newTasks
+        }
+    } else if (action.type === types.DELETE_TASK) {
+        const newTasks = state.tasks.map((task, idx) => {
+            if (idx === action.payload.index) {
+                return {
+                    ...task,
+                    isDeleting: !task.isDeleting
+                }
+            }
+            return task
+        })
+        return {
+            ...state,
+            tasks: newTasks
+        }
+    } 
 
     return state
 }

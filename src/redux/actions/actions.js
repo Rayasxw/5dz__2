@@ -26,3 +26,24 @@ export function addTaskAction(title, description, completed) {
         payload: {title, description, completed }
     }
 }
+export function editTaskAction(title, description, index) {
+    return {
+        type: types.EDIT_TASK,
+        payload: {title, description, index }
+    }
+}
+
+export function deleteTaskAction(index) {
+    return {
+        type: types.DELETE_TASK,
+        payload: {index}
+    }
+}
+
+export function completedTaskAction(index) {
+    return {
+        type: types.COMPLETED_TASK,
+        payload: {index}
+    }
+}
+
