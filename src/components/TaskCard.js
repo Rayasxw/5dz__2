@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 import styles from './TaskCard.module.css'
 import { useState } from 'react'
-import { editTaskAction, deleteTaskAction} from '../redux/actions/actions'
+import { editTaskAction, deleteTaskAction, completedTaskAction} from '../redux/actions/actions'
 
 const TaskCard = ({ title, description, completed, index, isDeleting }) => {
     const [newTitle, setNewTitle] = useState(title)
@@ -21,7 +21,9 @@ const TaskCard = ({ title, description, completed, index, isDeleting }) => {
     const deleteBtn = () => {
         dispatch(deleteTaskAction(index))
     }
-
+    const completedTask = () => {
+        dispatch(completedTaskAction(index))
+    }
     return (
         isDeleting ? <></> :
         <div className={`${styles.card} ${completed ? styles.completed : ''}`}>
@@ -39,7 +41,7 @@ const TaskCard = ({ title, description, completed, index, isDeleting }) => {
                 </>
             )}
             <div className={styles.buttons}>
-                <input type="checkbox"  checked={completed} />
+                <input type="checkbox"  checked={completed} onChange={completedTask}/>
                 <button onClick={() => setIsEditing(true)}>Edit</button>
                 <button onClick={deleteBtn}>Delete</button>
             </div>

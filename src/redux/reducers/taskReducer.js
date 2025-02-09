@@ -47,7 +47,21 @@ export default function taskReducer(state = initialState, action) {
             ...state,
             tasks: newTasks
         }
-    } 
+    } else if (action.type === types.COMPLETED_TASK) {
+        const newTasks = state.tasks.map((task, idx) => {
+            if(idx === action.payload.index) {
+                return {
+                    ...task,
+                    completed: !task.completed
+                }
+            }
+            return task
+        })
+        return {
+            ...state,
+            tasks: newTasks
+        }
+    }
 
     return state
 }
